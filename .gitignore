@@ -1,0 +1,74 @@
+# ----------------------------------------------------------------
+# --- Abaqus & FEA Files (CRITICAL) ---
+# ----------------------------------------------------------------
+# The #1 most important file to ignore: the Output Database
+*.odb
+*.odb_f
+
+# Temporary simulation files
+*.abq
+*.com
+*.ipm
+*.lck
+*.mdl
+*.prt
+*.res
+*.sel
+*.sta
+*.stt
+*.dat
+*.log
+*.msg
+*.sim
+*.cid
+*.post
+
+# Abaqus/CAE files
+*.cae
+*.jnl
+*.rpy
+
+# Scratch directory and files
+scratch/
+*.023
+
+# ----------------------------------------------------------------
+# --- Fortran & Compiled Files ---
+# ----------------------------------------------------------------
+# Compiled object files
+*.o
+*.obj
+
+# Fortran module files
+*.mod
+
+# Shared libraries (the compiled VUMAT)
+*.so
+*.dll
+*.lib
+*.a
+
+# ----------------------------------------------------------------
+# --- OS-specific junk files ---
+# ----------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ----------------------------------------------------------------
+# --- IMPORTANT: Re-include your result files ---
+# ----------------------------------------------------------------
+# This section overrides the rules above, but ONLY for files
+# inside your 'expected_results/' folder.
+#
+# This allows you to commit 'Job-LMSC-8RVE-XSYM-Mesh-1elm1RVE_time000024_200f.dat'
+# inside 'expected_results/' while ignoring all other .dat files.
+#
+!expected_results/
+!expected_results/**/*.dat
+!expected_results/**/*.log
