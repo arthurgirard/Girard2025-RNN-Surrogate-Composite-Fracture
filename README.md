@@ -1,4 +1,4 @@
-# Vumat code of: Recurrent Neural Network Model Predicting Elasto-Plasticity and Matrix Fracture in Fiber-Reinforced Composites
+ # Recurrent Neural Network Model Predicting Elasto-Plasticity and Matrix Fracture in Fiber-Reinforced Composites
 
 This repository contains the Abaqus VUMAT subroutine and validation files for the paper:
 
@@ -19,7 +19,11 @@ The VUMAT features 5 states variables that are used by the network as latent spa
 This VUMAT implementation was used to generate the results for the structural validation (3-point bending problem) presented in Section 5.6 of the paper. 
 
 ## How to Use 
+Run the .inp file in the folder 3ptbending_inputfile
 
+Field Output request: 
+
+History Output request:
 
 ## How to Explore results
 
