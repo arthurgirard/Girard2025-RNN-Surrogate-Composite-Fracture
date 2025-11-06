@@ -645,16 +645,16 @@ _s_Surf-Left_S1, S1
 *DEPVAR, DELETE=15
 **Depvar
      15,
-1,  INCEPS0,    IncrementSrain 1
-2,  INCEPS1,    IncrementSrain 2
-3,  INCEPS2,    IncrementSrain 3
-4,  INCEPS3,    IncrementSrain 4
-5,  MEM0,    LMSC  memory state 0
-6,  MEM1,    LMSC  memory state 1
-7,  MEM2,    LMSC  memory state 2
-8, MEM3,    LMSC  memory state 3
-9, NORM,    Increment_Norm
-10, HCCRITPRED,    HCRIT_PRED 
+1,  INCEPS1,    IncrementSrain 1
+2,  INCEPS2,    IncrementSrain 2
+3,  INCEPS3,    IncrementSrain 3
+4,  MEM1,    LMSC  memory state 1
+5,  MEM2,    LMSC  memory state 2
+6,  MEM3,    LMSC  memory state 3
+7,  MEM4,    LMSC  memory state 4
+8,  MEM5,    LMSC  memory state 5
+9,  NORM,    Increment_Norm
+10, Frac_ini,    Fracture_initiation
 11, Damp_1,    Damp_Strain_1
 12, Damp_2,    Damp_Strain_2
 13, Damp_3,    Damp_Strain_3
