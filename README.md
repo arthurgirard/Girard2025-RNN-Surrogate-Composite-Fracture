@@ -40,9 +40,27 @@ The history of the reaction forces (Plot in fig. XX) are requested
 RF1, RF2, RF3, RM1, RM2, RM3
 ```
 
-
-## How to Explore results
-
+The role of each state variable is detailed in parenthesis below: 
+```
+*DEPVAR, DELETE=15 (Numner of the state variable controlling the element deletion)
+**Depvar
+     15, (number of states variables)
+1,  INCEPS1,    IncrementSrain 1 (input of the RNN)
+2,  INCEPS2,    IncrementSrain 2 (input of the RNN)
+3,  INCEPS3,    IncrementSrain 3 (input of the RNN)
+4,  MEM1,    LMSC  memory state 1 (State variable as latent space of the RNN)
+5,  MEM2,    LMSC  memory state 2 (State variable as latent space of the RNN)
+6,  MEM3,    LMSC  memory state 3 (State variable as latent space of the RNN)
+7,  MEM4,    LMSC  memory state 4 (State variable as latent space of the RNN)
+8,  MEM5,    LMSC  memory state 5 (State variable as latent space of the RNN)
+9,  NORM,    Increment_Norm (used to normalize the inputs)
+10, Frac_ini,    Fracture_initiation (Prediction of the fracture initiation, output)
+11, Damp_1,    Damp_Strain_1 (Damping applied on the Stress output S11)
+12, Damp_2,    Damp_Strain_2 (Damping applied on the Stress output S22)
+13, Damp_3,    Damp_Strain_3 (Damping applied on the Stress output S33)
+14, Damp_4,    Damp_Strain_4 (Damping applied on the Stress output S12)
+15, ElmDEL,    ElmDEL (State variable controlling the Element deletion)
+```
 
 ## How to Cite
 
