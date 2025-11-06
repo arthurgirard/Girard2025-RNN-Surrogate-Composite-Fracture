@@ -9,13 +9,20 @@ This repository contains the Abaqus VUMAT subroutine and validation files for th
 
 ## Introduction
 
-This VUMAT subroutine implements an **extended Minimal State Cell (MSC) Recurrent Neural Network (RNN)** as a surrogate model. It is designed to predict the homogenized elasto-plastic stress-strain response and the **matrix fracture initiation** (when the fracture indicator $D=1$) in fiber-reinforced composites.
+This VUMAT subroutine is the implementation of a extended Minimal State Cell (MSC) Recurrent Neural Network (RNN) as a surrogate model. 
+It predicts the homogenized elasto-plastic stress-strain response and the matrix fracture initiation (when the fracture indicator $D=1$) of a Reduced Volume Element (RVE) representative of a UD carbon fiber-reinforced composites.
 
-The model formulation is detailed in **Section 4.1** of the paper. This VUMAT implementation was used to generate the "Homogeneous FE with RNN" results for the structural validation (3-point bending problem) presented in **Section 5.6**.
+The model formulation is detailed in Section 4.1 of the paper. 
+The VUMAT contains around 6500 trainable parameters (additional include of the subroutine). Those trainable parameters are found during the training and fixed
+The VUMAT features 5 states variables that are used by the network as latent space to store any time-dependant information. At each call of the subroutine, the previous state variable is used as input of the network this state variable is updated. The evolution of each of the 5 states variable can be accessed as history output in the .odb file. 
+
+This VUMAT implementation was used to generate the results for the structural validation (3-point bending problem) presented in Section 5.6 of the paper. 
 
 ## How to Use 
 
+
 ## How to Explore results
+
 
 ## How to Cite
 
@@ -29,3 +36,4 @@ If you use this code or model in your research, please cite the original paper.
   year    = {2025},
   note    = {Manuscript No. IJSS-D-25-01338}
 }
+```
