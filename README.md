@@ -1,9 +1,9 @@
-# Code for: Recurrent Neural Network Model Predicting Elasto-Plasticity and Matrix Fracture in Fiber-Reinforced Composites
+# Vumat code of: Recurrent Neural Network Model Predicting Elasto-Plasticity and Matrix Fracture in Fiber-Reinforced Composites
 
 This repository contains the Abaqus VUMAT subroutine and validation files for the paper:
 
 > Girard, A., & Mohr, D. (2025). Recurrent Neural Network Model Predicting Elasto-Plasticity and Matrix Fracture in Fiber-Reinforced Composites. *International Journal of Solids and Structures*. (Manuscript No. IJSS-D-25-01338). 
-> [DOI: 10.XXXX/XXXXX]
+> https://doi.org/10.1016/j.ijsolstr.2025.113703
 
 **Keywords:** `Abaqus`, `VUMAT`, `Fortran`, `RNN`, `Recurrent Neural Network`, `Surrogate Modeling`, `Fiber-Reinforced Composites`, `Matrix Fracture`, `Elasto-Plasticity`, `Computational Mechanics`
 
