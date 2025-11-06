@@ -22,8 +22,24 @@ This VUMAT implementation was used to generate the results for the structural va
 Run the .inp file in the folder 3ptbending_inputfile
 
 Field Output request: 
+```
+*Output, field, number interval=50
+*Element Output, directions=YES
+E, LE, S, SDV
+**
+```
+S : Stress components returned by the RNN
+SDV : States variables
 
-History Output request:
+
+The history of the reaction forces (Plot in fig. XX) are requested
+
+```
+*Output, history
+*Node Output, nset=Set-RP-Encastre-left
+RF1, RF2, RF3, RM1, RM2, RM3
+```
+
 
 ## How to Explore results
 
