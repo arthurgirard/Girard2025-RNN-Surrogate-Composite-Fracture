@@ -83,6 +83,10 @@ If you use this code or model in your research, please cite the original paper.
   author  = {Girard, Arthur and Mohr, Dirk},
   journal = {International Journal of Solids and Structures},
   year    = {2025},
-  note    = {Manuscript No. IJSS-D-25-01338}
+  note    = {Manuscript No. IJSS-D-25-01338} 
 }
 ```
+
+## I'm open for collaboations
+Let's connect 
+> https://www.linkedin.com/in/arthur-girard/
