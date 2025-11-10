@@ -87,6 +87,5 @@ If you use this code or model in your research, please cite the original paper.
 }
 ```
 
-## I'm open for collaboations
-Let's connect 
+Want to know more about my work ? let's connect 
 > https://www.linkedin.com/in/arthur-girard/
