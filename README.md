@@ -21,6 +21,7 @@ This VUMAT implementation was used to generate the results for the structural va
 ## How to Use 
 
 Loading modules on Euler (ETH) Cluster: 
+
 ```module load stack/2024-06 intel-oneapi-compilers/2023.2.0 abaqus/2023 libjpeg-turbo/3.0.0```
 
 
