@@ -27,6 +27,11 @@ Loading modules on Euler (ETH) Cluster:
 
 Run the .inp file in the folder 3ptbending_inputfile
 
+Example command on Euler Cluster
+
+```sbatch --ntasks=6  --time=4:00:00 --mem-per-cpu=6G --tmp=2G --wrap "unset SLURM_GTIDS; abaqus job=Job.inp user=VUMAT double=both cpus=6 scratch=\$TMPDIR" ```
+
+
 Field Output request: 
 ```
 *Output, field, number interval=50
