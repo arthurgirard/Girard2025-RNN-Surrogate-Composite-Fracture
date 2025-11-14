@@ -2,7 +2,7 @@
 
 This repository contains the Abaqus VUMAT subroutine and validation files for the paper:
 
-> Girard, A., & Mohr, D. (2025). Recurrent Neural Network Model Predicting Elasto-Plasticity and Matrix Fracture in Fiber-Reinforced Composites. *International Journal of Solids and Structures*. (Manuscript No. IJSS-D-25-01338). 
+> Girard, Arthur, and Dirk Mohr. "Recurrent neural network model predicting elasto-plasticity and matrix fracture in fiber-reinforced composites." International Journal of Solids and Structures (2025): 113703. 
 > https://doi.org/10.1016/j.ijsolstr.2025.113703
 
 **Keywords:** `Abaqus`, `VUMAT`, `Fortran`, `RNN`, `Recurrent Neural Network`, `Surrogate Modeling`, `Fiber-Reinforced Composites`, `Fracture Initiation`, `Elasto-Plasticity`, `Computational Mechanics`
@@ -73,19 +73,21 @@ The role of each state variable is detailed in parenthesis below:
 15, ElmDEL,    ElmDEL (State variable controlling the Element deletion)
 ```
 
+Want to know more about my work ? let's connect 
+> https://www.linkedin.com/in/arthur-girard/
+
 ## How to Cite
 
 If you use this code or model in your research, please cite the original paper.
 
 ```bibtex
-@article{Girard2025,
-  title   = {Recurrent Neural Network Model Predicting Elasto-Plasticity and Matrix Fracture in Fiber-Reinforced Composites},
-  author  = {Girard, Arthur and Mohr, Dirk},
-  journal = {International Journal of Solids and Structures},
-  year    = {2025},
-  note    = {Manuscript No. IJSS-D-25-01338} 
+@article{girard2025recurrent,
+  title={Recurrent neural network model predicting elasto-plasticity and matrix fracture in fiber-reinforced composites},
+  author={Girard, Arthur and Mohr, Dirk},
+  journal={International Journal of Solids and Structures},
+  pages={113703},
+  year={2025},
+  publisher={Elsevier}
 }
 ```
 
-Want to know more about my work ? let's connect 
-> https://www.linkedin.com/in/arthur-girard/
