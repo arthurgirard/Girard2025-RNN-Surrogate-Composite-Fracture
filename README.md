@@ -96,7 +96,8 @@ The same authors also explained in detail self-consistent models are necessary c
 > https://doi.org/10.1016/j.jmps.2021.104697
 >
 
-Do you have questions or want to know more about my work ? Let's connect! 
-> https://www.linkedin.com/in/arthur-girard/
+## Contact
+
+For questions or collaboration, you can reach me on [LinkedIn](https://www.linkedin.com/in/arthur-girard/).
 
 
