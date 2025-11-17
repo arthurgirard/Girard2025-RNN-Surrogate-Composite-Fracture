@@ -20,7 +20,7 @@ This VUMAT implementation was used to generate the results for the structural va
 
 ## How to Use 
 
-Make sure that the include files are in the same folder as the subroutine. 
+Make sure that the include files are in the same folder as the subroutine and that your fortran compiler is linked with Abaqus.
 
 Loading modules on Euler (ETH) Cluster: 
 
