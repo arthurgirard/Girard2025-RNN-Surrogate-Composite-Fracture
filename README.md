@@ -1,6 +1,6 @@
  # Recurrent Neural Network Model Predicting Elasto-Plasticity and Matrix Fracture in Fiber-Reinforced Composites
 
-This repository contains the Abaqus VUMAT subroutine and validation files for the paper:
+This repository contains the Abaqus VUMAT subroutine and validation files to obtain the same results as presented in the paper:
 
 > Girard, Arthur, and Dirk Mohr. "Recurrent neural network model predicting elasto-plasticity and matrix fracture in fiber-reinforced composites." International Journal of Solids and Structures (2025): 113703. 
 > https://doi.org/10.1016/j.ijsolstr.2025.113703
@@ -9,16 +9,18 @@ This repository contains the Abaqus VUMAT subroutine and validation files for th
 
 ## Introduction
 
-This VUMAT subroutine is the implementation of a extended Minimal State Cell (MSC) Recurrent Neural Network (RNN) as a surrogate model. 
-It predicts the homogenized elasto-plastic stress-strain response and the matrix fracture initiation (when the fracture indicator $D=1$) of a Reduced Volume Element (RVE) representative of a UD carbon fiber-reinforced composites.
+This VUMAT subroutine is the implementation of a extended Minimal State Cell (MSC), based on a  Recurrent Neural Network (RNN), as a surrogate model. 
+It predicts the homogenized elasto-plastic stress-strain response and the matrix fracture initiation (when the fracture indicator $D=1$) of a Reduced Volume Element (RVE) representative of a UD carbon fiber-reinforced composites (presented in Section 3 of the paper). 
 
 The model formulation is detailed in Section 4.1 of the paper. 
-The VUMAT contains around 6500 trainable parameters (additional include of the subroutine). Those trainable parameters are found during the training and fixed
+The VUMAT contains around 6500 trainable parameters (saved in the *include files in the subroutine code). Those trainable parameters are found during the training and fixed
 The VUMAT features 5 states variables that are used by the network as latent space to store any time-dependant information. At each call of the subroutine, the previous state variable is used as input of the network this state variable is updated. The evolution of each of the 5 states variable can be accessed as history output in the .odb file. 
 
 This VUMAT implementation was used to generate the results for the structural validation (3-point bending problem) presented in Section 5.6 of the paper. 
 
 ## How to Use 
+
+Make sure that the include files are in the same folder of the subroutine. 
 
 Loading modules on Euler (ETH) Cluster: 
 
@@ -40,10 +42,10 @@ E, LE, S, SDV
 **
 ```
 S : Stress components returned by the RNN
-SDV : States variables
+SDV : States variables 
 
 
-The history of the reaction forces (Plot in fig. XX) are requested
+The history of the reaction forces (Plot in fig. 21) are requested
 
 ```
 *Output, history
@@ -73,11 +75,6 @@ The role of each state variable is detailed in parenthesis below:
 15, ElmDEL,    ElmDEL (State variable controlling the Element deletion)
 ```
 
-Want to know more about my work ? let's connect 
-> https://www.linkedin.com/in/arthur-girard/
-
-## How to Cite
-
 If you use this code or model in your research, please cite the original paper.
 
 ```bibtex
@@ -90,4 +87,16 @@ If you use this code or model in your research, please cite the original paper.
   publisher={Elsevier}
 }
 ```
+
+Want to know more about my work ? let's connect 
+> https://www.linkedin.com/in/arthur-girard/
+
+## Additionnal readings
+
+Bonatti et al. presented in 2021 the MSC architecture. (Bonatti, Colin, and Dirk Mohr. "One for all: Universal material model based on minimal state-space neural networks." Science Advances 7.26 (2021): eabf3658. 10.1126/sciadv.abf3658
+> https://doi.org/10.1126/sciadv.abf3658
+
+The same authors also explained in details why self-consistents model are nescessary conditions to the correct implementation of surrogate models as VUMAT subroutines. 
+> https://doi.org/10.1016/j.jmps.2021.104697
+
 
