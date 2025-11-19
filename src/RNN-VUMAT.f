@@ -35,29 +35,14 @@ C     ToDO> replace int number by the int parameters
       real*8, dimension(width,compplusunit) :: wa1,wb1
       real*8, dimension(width) :: ba1,bb1
       real*8, dimension(width,width) :: wda2,wdb2
-      real*8, dimension(width,width) :: wda3,wdb3
-      real*8, dimension(width,width) :: wda4,wdb4
       real*8, dimension(width) :: bda2,bdb2
-      real*8, dimension(width) :: bda3,bdb3
-      real*8, dimension(width) :: bda4,bdb4
       real*8, dimension(width) :: outswa_1,outswb_1
       real*8, dimension(width) :: outswa_2,outswb_2
-      real*8, dimension(width) :: outswa_3,outswb_3 
-      real*8, dimension(width) :: outswa_4,outswb_4
-      real*8, dimension(width) :: wout5, outswa, tainsw, bd
       real*8, dimension(width) :: tainsw_1,tainsw_2
-      real*8, dimension(width) :: tainsw_3,tainsw_4
-      real*8, dimension(width) :: b, aMul_01, aMul_02, outswb
-      real*8, dimension(width) :: wout2,aMul_02_1
-      real*8, dimension(width,width) :: wout3,wd
-      real*8, dimension(units) :: bout,bfandh,xf,xh, newsts,xf_anorm
-      real*8, dimension(units) :: minus_one_xf_anorm,xf_anorm_exp
-      real*8, dimension(width,units) :: wout,wout1,wout0,wout4
-      real*8, dimension(comp,comp) :: DDSDDE, amtrans
+      real*8, dimension(units) :: bfandh,xf,xh, newsts
       real*8, dimension(comp) :: outs_b4_norm
-      real*16, dimension(comp) :: aains,aainsr,outs,outsr,damp 
+      real*16, dimension(comp) :: aains,outs,damp 
       real*8, dimension(compplusunit) :: tains
-      real*8, dimension(width,compplusunit) :: w 
       real*8, dimension(units,width) :: wfandh 
 C     -------------------------------------------   
 C     Model definition Layer Stress 0-1
@@ -70,45 +55,8 @@ C     Model definition Layer Stress 2-3
       real*8, dimension(width) :: stress_dense_2_biais
       real*8, dimension(width) :: stress_dense_3_biais
       real*8, dimension(width) :: outsr3 , outsr2_1, outsr2_2
-C     Model definition Layer Stress 4-5  
-      real*8, dimension(width,width) :: stress_dense_4,stress_dense_5
-      real*8, dimension(width) :: stress_dense_4_biais
-      real*8, dimension(width) :: stress_dense_5_biais
-      real*8, dimension(width) :: outsr4 , outsr3_1, outsr3_2
-C     Model definition Layer Stress 6-7  
-      real*8, dimension(width) :: outsr5 , outsr4_1, outsr4_2     
-      real*8, dimension(width,width) :: stress_dense_6,stress_dense_7
-      real*8, dimension(width) :: stress_dense_7_biais,stress_dense_6_biais
-C     Model definition Layer Stress 8
-      real*8, dimension(comp,width) :: stress_dense_8
-C     Model definition Layer Stress Output
-      real*8, dimension(comp,width) :: stress_output_layer
-C     -------------------------------------------       
-C     Layer Damage
-C     -------------------------------------------   
-C     Dense 9 and 10
-      real*8, dimension(width, units) :: damage_dense_9,damage_dense_10
-      real*8, dimension(width) :: outDam_1, outDam_2,outDam_1_out
-      real*8, dimension(width) :: outDam_2_out, outDam1, outDam9_10
-C     Dense 11 and 12
-      real*8, dimension(width, width) :: damage_dense_11,damage_dense_12
-      real*8, dimension(width) :: outDam_3,outDam_3_out
-      real*8, dimension(width) :: outDam_4,outDam_4_out, outDam11_12
-C     Dense 13 and 14
-      real*8, dimension(width, width) :: damage_dense_14
-      real*8, dimension(width) :: outDam_5,outDam_5_out
-      real*8, dimension(width) :: outDam_6,outDam_6_out, outDam13_14
-C     Dense 15 and 16
-      real*8, dimension(width, width) :: damage_dense_15,damage_dense_16
-      real*8, dimension(width) :: outDam_7,outDam_7_out
-      real*8, dimension(width) :: outDam_8,outDam_8_out, outDam15_16
-C     Dense 17
-      real*8, dimension(DimDamage,width) :: damage_dense_13
-C     Output Layer Damage     
-      real*8, dimension(DimDamage) :: DamOutput,DamOutput_out
 C     Output Layer
       real*8, dimension(comp) :: StressOutput
-      real*8, dimension(comp,comp) :: amtransout
 C     -------------------------------------------   
       real*8, dimension(units) :: sts,sts_minusxh,newsts_noadd
       real*8 ansts, anorm,Y,n,lambda,mu,sigm
@@ -123,11 +71,8 @@ C material properties
       E = 3100.0D0
       XNU = 0.3
       TWOMU = E / (1.0D0 + XNU)
-      THREMU = 3.0D0 / 2.0D0 * TWOMU
       SIXMU = 3.0D0 * TWOMU
       ALAMDA = TWOMU * (E - TWOMU) / (SIXMU - 2.0D0 * E)
-      TERM = 1.0D0 / (TWOMU * (1.0D0 + HARD / THREMU))
-      CON1 = SQRT(2.0D0 / 3.0D0)
       IF ((totalTime .eq. 0.0).and.(stepTime .eq. 0.0)) THEN
          DO I = 1, NBLOCK
             ! Compute trial stress
@@ -305,20 +250,3 @@ C     SDV15 controls element deletion flag
 !------end_Subroutine_VUMAT
       RETURN
       END subroutine VUMAT
-
-      SUBROUTINE relu_vec(x, y, n)
-      IMPLICIT NONE
-      INTEGER, INTENT(IN) :: n
-      REAL*8, INTENT(IN)  :: x(n)
-      REAL*8, INTENT(OUT) :: y(n)
-      INTEGER :: i
-
-      DO i = 1, n
-         IF (x(i) < 0D0) THEN
-            y(i) = 0D0
-         ELSE
-            y(i) = x(i)
-         ENDIF
-      END DO
-
-      END SUBROUTINE relu_vec
